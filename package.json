@@ -1,12 +1,12 @@
 {
-  "name": "com.mainx.scrollrect",
+  "name": "com.agium.scrollRect",
   "version": "1.0.0",
   "displayName": "Scroll Rect System",
   "description": "Scroll Rect System",
   "unity": "2020.3",
   "author": {
     "email": "davit87.yeghoyan@gmail.com",
-    "name": "MAINX",
+    "name": "Davit Yeghoyan",
     "url": ""
   },
   "dependencies": {
@@ -14,7 +14,7 @@
 
   "repository": {
     "type": "git",
-    "url": "https://github.com/mainx-dev/ScrollRect.git"
+    "url": "https://github.com/davit87yeghoyan/ScrollRect.git"
   },
 
   "samples": [
