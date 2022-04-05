@@ -17,6 +17,8 @@ namespace ScrollRectSteps_System.Scripts.ViewModels
 
         private bool itemsEnd;
 
+        private bool loadInProces;
+
         
 
         public void Initialization(IScrollRectDataHelper scrollRectData, ScrollRectSettings settings)
@@ -40,13 +42,15 @@ namespace ScrollRectSteps_System.Scripts.ViewModels
 
         private void GetItems(Action<IItemInfo[]> action)
         {
-            if(Loader.Value || (!scrollRectSettings.forceGet && itemsEnd)) return;
+            if(loadInProces || (!scrollRectSettings.forceGet && itemsEnd)) return;
+            loadInProces = true;
             Loader.Value = true;
             scrollRectDataHelper.GetItems(currentScrollRectInfo.CurrentMaxNumber, scrollRectSettings, action);
         }
 
         private void AddPropertyItems(BindableProperty<IItemInfo[]> property,IItemInfo[] itemInfos)
         {
+            loadInProces = true;
             Loader.Value = false;
             currentScrollRectInfo.CurrentMaxNumber += itemInfos.Length;
             itemsEnd = scrollRectSettings.loadStepCount > itemInfos.Length;
