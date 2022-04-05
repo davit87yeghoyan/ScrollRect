@@ -26,6 +26,16 @@ namespace ScrollRectSteps_System.Scripts.ViewModels
             scrollRectDataHelper = scrollRectData;
             GetItems(SetItemsAll);
         }
+        
+        public void CleerAll()
+        {
+            itemsEnd = false;
+            ItemsInfoAll.Value = Array.Empty<IItemInfo>();
+            ItemsInfoAdd.Value = Array.Empty<IItemInfo>();
+            Loader.Value = false;
+            ButtonLoader.Value = false;
+        }
+
 
         public void AddItems() 
             => GetItems(AddItems);
