@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using MVVMBase.DataBinding;
 using UnityEngine;
 
@@ -21,21 +21,13 @@ namespace ScrollRectSteps_System.Scripts.ViewModels
 
         public void Initialization(IScrollRectDataHelper scrollRectData, ScrollRectSettings settings)
         {
+            itemsEnd = false;
             scrollRectSettings = settings;
             currentScrollRectInfo = new CurrentScrollRectInfo();
             scrollRectDataHelper = scrollRectData;
             GetItems(SetItemsAll);
         }
         
-        public void CleerAll()
-        {
-            itemsEnd = false;
-            ItemsInfoAll.Value = Array.Empty<IItemInfo>();
-            ItemsInfoAdd.Value = Array.Empty<IItemInfo>();
-            Loader.Value = false;
-            ButtonLoader.Value = false;
-        }
-
 
         public void AddItems() 
             => GetItems(AddItems);
