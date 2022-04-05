@@ -50,7 +50,7 @@ namespace ScrollRectSteps_System.Scripts.ViewModels
 
         private void AddPropertyItems(BindableProperty<IItemInfo[]> property,IItemInfo[] itemInfos)
         {
-            loadInProces = true;
+            loadInProces = false;
             Loader.Value = false;
             currentScrollRectInfo.CurrentMaxNumber += itemInfos.Length;
             itemsEnd = scrollRectSettings.loadStepCount > itemInfos.Length;
