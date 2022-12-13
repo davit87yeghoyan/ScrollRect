@@ -44,7 +44,7 @@ namespace ScrollRectSteps_System.Scripts.ViewModels
 
         private void GetItems(Action<IItemInfo[]> action)
         {
-            if(loadInProces || (!scrollRectSettings.forceGet && itemsEnd)) return;
+            if(loadInProces || scrollRectSettings is null || (!scrollRectSettings.forceGet && itemsEnd)) return;
             loadInProces = true;
             Loader.Value = true;
             scrollRectDataHelper.GetItems(currentScrollRectInfo.CurrentMaxNumber, scrollRectSettings, action);
