@@ -106,7 +106,7 @@ namespace ScrollRectSteps_System.Scripts.Views
         private void ValueChanged(Vector2 arg0)
         {
             if(_loaderButton != null) return;
-            Debug.Log(arg0);
+           
             if (scrollRect.vertical && arg0.y <= 0)
             {
                 BindingContext.AddItems();
